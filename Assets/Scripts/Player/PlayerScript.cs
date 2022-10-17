@@ -7,19 +7,25 @@ public class PlayerScript : MonoBehaviour
     public CharacterController characterController;
     public float playerSpeed = 5.0f;
     public Joystick js;
-    public float health = 100.0f;
+    public int MaxHealth = 100;
+    public int CurrentHealth;
     private Animator animator;
     public GameObject bullet;
     public Transform firePoint;
-    private void Start()
+    public HealthBar healthBar;
+
+    public void Start()
     {
         animator = GetComponent<Animator>();
+        CurrentHealth = MaxHealth;
+        healthBar.SetMaxHealth(MaxHealth);
     }
     void Update()
     {
         if(Input.GetKeyDown("space"))
         {
             shoot();
+            TakeDamage(20);
         }
         Vector3 move = new Vector3(js.Horizontal, 0, js.Vertical);
 
@@ -30,5 +36,12 @@ public class PlayerScript : MonoBehaviour
     {
         Instantiate(bullet, firePoint.position, Quaternion.identity);
         Debug.Log("shoot");
+    }
+
+    void TakeDamage (int damage)
+    {
+        CurrentHealth -= damage;
+        healthBar.SetHealth(CurrentHealth);
+        Debug.Log(CurrentHealth);
     }
 }
