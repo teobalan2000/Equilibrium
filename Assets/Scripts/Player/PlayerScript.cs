@@ -40,7 +40,7 @@ public class PlayerScript : MonoBehaviour
         if(Input.GetKeyDown("space"))
         {
             shoot();
-            TakeDamage(20);
+            //TakeDamage(20);
         }
         Vector3 move = new Vector3(js.Horizontal, 0, js.Vertical);
 
@@ -55,6 +55,7 @@ public class PlayerScript : MonoBehaviour
 
     void TakeDamage (int damage)
     {
+       
         CurrentHealth -= damage;
         healthBar.SetHealth(CurrentHealth);
         Debug.Log(CurrentHealth);

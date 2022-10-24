@@ -10,7 +10,9 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //enemy.transform.position.y = 0f;
         enemy.updateRotation = false;
+
     }
 
     // Update is called once per frame
