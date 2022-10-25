@@ -5,50 +5,25 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
 
-	public Joystick joystick;
-	public GameObject Object;
-	Vector2 GameobjectRotation;
-	private float GameobjectRotation2;
-	private float GameobjectRotation3;
-	public GameObject FirePoint;
+    public Joystick jsWeapon;
+    public Transform aimTransform;
+    private void Awake()
+    {
+        aimTransform = transform.Find("Aim");
+    }
 
-	public bool FacingRight = true;
+    private void Update()
+    {
+       // Vector3 aimPosMouse = GetMouseWorldPosition();//UtilsClass.GetMouseWorlPosition();
+        //Vector3 aimPosJs = new Vector3(jsWeapon.Horizontal, 0f, jsWeapon.Vertical);
+        //Debug.Log("mouse point = " + aimPosMouse);
+        //Debug.Log("Joystick point = " + aimPosJs);
+       // Vector3 aimDirection = (aimPosJs - transform.position).normalized;
+        float angle = Mathf.Atan2(jsWeapon.Vertical, jsWeapon.Horizontal) * Mathf.Rad2Deg;
+        //Debug.Log(jsWeapon.Vertical + " - " + jsWeapon.Horizontal);
+        aimTransform.eulerAngles = new Vector3(45, 0, angle);
+        //Debug.Log("Angle = " + angle);
+        //Debug.Log("Euler = " + aimTransform.eulerAngles);
+    }
 
-	void Update()
-	{
-		//Gets the input from the jostick
-		GameobjectRotation = new Vector2(joystick.Horizontal, joystick.Vertical);
-
-		GameobjectRotation3 = GameobjectRotation.x;
-
-		if (FacingRight)
-		{
-			//Rotates the object if the player is facing right
-			GameobjectRotation2 = GameobjectRotation.x + GameobjectRotation.y * 90;
-			Object.transform.rotation = Quaternion.Euler(0f, 0f, GameobjectRotation2);
-		}
-		else
-		{
-			//Rotates the object if the player is facing left
-			GameobjectRotation2 = GameobjectRotation.x + GameobjectRotation.y * -90;
-			Object.transform.rotation = Quaternion.Euler(0f, 180f, -GameobjectRotation2);
-		}
-		if (GameobjectRotation3 < 0 && FacingRight)
-		{
-			// Executes the void: Flip()
-			Flip();
-		}
-		else if (GameobjectRotation3 > 0 && !FacingRight)
-		{
-			// Executes the void: Flip()
-			Flip();
-		}
-	}
-	private void Flip()
-	{
-		// Flips the player.
-		FacingRight = !FacingRight;
-		//Object.transform.Rotate(0, 0, 0);
-		transform.Rotate(-45, 180, 0);
-	}
 }

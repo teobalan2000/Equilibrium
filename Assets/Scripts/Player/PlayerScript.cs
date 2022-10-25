@@ -29,6 +29,7 @@ public class PlayerScript : MonoBehaviour
 
         
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+        /*
         if (jsWeapon.Horizontal == 0)
         {
             if (horizontalMove > 0 && faceingLeft)
@@ -51,7 +52,7 @@ public class PlayerScript : MonoBehaviour
                 flipPlayer();
             }
         }
-
+        */
 
         if(Input.GetKeyDown("space"))
         {
