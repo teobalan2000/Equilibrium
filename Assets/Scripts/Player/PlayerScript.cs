@@ -6,7 +6,8 @@ public class PlayerScript : MonoBehaviour
 {
     public CharacterController characterController;
     public float playerSpeed = 5.0f;
-    public Joystick js;
+    public Joystick jsMovement;
+    public Joystick jsWeapon;
     public int MaxHealth = 100;
     public int CurrentHealth;
     public Animator animator;
@@ -23,26 +24,42 @@ public class PlayerScript : MonoBehaviour
     float horizontalMove = 0f;
     void Update()
     {
-        horizontalMove = js.Horizontal * playerSpeed;
+
+        horizontalMove = jsMovement.Horizontal * playerSpeed;
+
         
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
-        
-        if(horizontalMove > 0 && faceingLeft)
+        /*
+        if (jsWeapon.Horizontal == 0)
         {
-            flipPlayer();
+            if (horizontalMove > 0 && faceingLeft)
+            {
+                flipPlayer();
+            }
+            else if (horizontalMove < 0 && !faceingLeft)
+            {
+                flipPlayer();
+            }
         }
-        else if(horizontalMove < 0 && !faceingLeft)
+        else
         {
-            flipPlayer();
+            if (jsWeapon.Horizontal > 0 && faceingLeft)
+            {
+                flipPlayer();
+            }
+            else if (jsWeapon.Horizontal < 0 && !faceingLeft)
+            {
+                flipPlayer();
+            }
         }
-
+        */
 
         if(Input.GetKeyDown("space"))
         {
             shoot();
             //TakeDamage(20);
         }
-        Vector3 move = new Vector3(js.Horizontal, 0, js.Vertical);
+        Vector3 move = new Vector3(jsMovement.Horizontal, 0, jsMovement.Vertical);
 
         characterController.Move(move * Time.deltaTime * playerSpeed);
     }
