@@ -4,32 +4,36 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    public CharacterController characterController;
-    public float playerSpeed = 5.0f;
+    public float moveSpeed = 5f;
+    public Rigidbody2D rigidBody;
     public Joystick jsMovement;
     public Joystick jsWeapon;
-    public int MaxHealth = 100;
     public int CurrentHealth;
+    public int MaxHealth = 100;
     public Animator animator;
-    public GameObject bullet;
-    public Transform firePoint;
     public HealthBar healthBar;
+    float horizontalMove = 0f;
     bool faceingLeft = true;
-    public void Start()
+
+    void Start()
     {
-        animator = GetComponent<Animator>();
+        rigidBody = GetComponent<Rigidbody2D>();
+        animator = GameObject.Find("Body").GetComponent<Animator>();
+        
         CurrentHealth = MaxHealth;
         healthBar.SetMaxHealth(MaxHealth);
+       
     }
-    float horizontalMove = 0f;
+
+    // Update is called once per frame
     void Update()
     {
+        horizontalMove = jsMovement.Horizontal * moveSpeed;
 
-        horizontalMove = jsMovement.Horizontal * playerSpeed;
+
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
         
-        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
-        /*
         if (jsWeapon.Horizontal == 0)
         {
             if (horizontalMove > 0 && faceingLeft)
@@ -52,37 +56,23 @@ public class PlayerScript : MonoBehaviour
                 flipPlayer();
             }
         }
-        */
+        
 
-        if(Input.GetKeyDown("space"))
-        {
-            shoot();
-            //TakeDamage(20);
-        }
-        Vector3 move = new Vector3(jsMovement.Horizontal, 0, jsMovement.Vertical);
-
-        characterController.Move(move * Time.deltaTime * playerSpeed);
+        rigidBody.velocity = new Vector2(jsMovement.Horizontal * moveSpeed, jsMovement.Vertical * moveSpeed);
     }
 
-    void shoot()
+    void TakeDamage(int damage)
     {
-        Instantiate(bullet, firePoint.position, Quaternion.identity);
-        Debug.Log("shoot");
-    }
 
-    void TakeDamage (int damage)
-    {
-       
         CurrentHealth -= damage;
         healthBar.SetHealth(CurrentHealth);
         Debug.Log(CurrentHealth);
     }
-
     void flipPlayer()
     {
         faceingLeft = !faceingLeft;
-        Vector3 scale = transform.localScale;
+        Vector3 scale = GameObject.Find("Body").transform.localScale;
         scale.x *= -1;
-        transform.localScale = scale;
+        GameObject.Find("Body").transform.localScale = scale;
     }
 }
