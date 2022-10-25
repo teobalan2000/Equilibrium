@@ -8,24 +8,18 @@ public class PlayerScript : MonoBehaviour
     public Rigidbody2D rigidBody;
     public Joystick jsMovement;
     public Joystick jsWeapon;
-    public int CurrentHealth;
-    public int MaxHealth = 100;
     public Animator animator;
-    public HealthBar healthBar;
     float horizontalMove = 0f;
     bool faceingLeft = true;
 
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
-        animator = GameObject.Find("Body").GetComponent<Animator>();
+        animator = GameObject.Find("BodyPlayer").GetComponent<Animator>();
         
-        CurrentHealth = MaxHealth;
-        healthBar.SetMaxHealth(MaxHealth);
        
     }
 
-    // Update is called once per frame
     void Update()
     {
         horizontalMove = jsMovement.Horizontal * moveSpeed;
@@ -61,13 +55,7 @@ public class PlayerScript : MonoBehaviour
         rigidBody.velocity = new Vector2(jsMovement.Horizontal * moveSpeed, jsMovement.Vertical * moveSpeed);
     }
 
-    void TakeDamage(int damage)
-    {
-
-        CurrentHealth -= damage;
-        healthBar.SetHealth(CurrentHealth);
-        Debug.Log(CurrentHealth);
-    }
+    
     void flipPlayer()
     {
         faceingLeft = !faceingLeft;
