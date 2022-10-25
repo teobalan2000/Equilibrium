@@ -24,6 +24,7 @@ public class PlayerScript : MonoBehaviour
     float horizontalMove = 0f;
     void Update()
     {
+
         horizontalMove = jsMovement.Horizontal * playerSpeed;
 
         

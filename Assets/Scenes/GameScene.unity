@@ -1690,7 +1690,7 @@ GameObject:
   - component: {fileID: 859707220}
   - component: {fileID: 859707221}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: EnemyCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3344,7 +3344,7 @@ GameObject:
   - component: {fileID: 1991094480}
   - component: {fileID: 1991094481}
   m_Layer: 0
-  m_Name: Collider
+  m_Name: PlayerCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3491,7 +3491,7 @@ PrefabInstance:
     - target: {fileID: 14976407073087874, guid: 958171f3706834bb7b908c84614eed25,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 2.24
       objectReference: {fileID: 0}
     - target: {fileID: 14976407073087874, guid: 958171f3706834bb7b908c84614eed25,
         type: 3}
