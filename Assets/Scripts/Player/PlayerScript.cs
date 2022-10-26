@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public Rigidbody2D rigidBody;
+    public Rigidbody2D rb;
     public Joystick jsMovement;
     public Joystick jsWeapon;
     public Animator animator;
@@ -14,16 +14,17 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
-        rigidBody = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         animator = GameObject.Find("BodyPlayer").GetComponent<Animator>();
         
        
     }
-
+    Vector2 movement;
     void Update()
     {
         horizontalMove = jsMovement.Horizontal * moveSpeed;
-
+        movement.x = jsMovement.Horizontal;
+        movement.y = jsMovement.Vertical;
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
@@ -51,16 +52,20 @@ public class PlayerScript : MonoBehaviour
             }
         }
         
-
-        rigidBody.velocity = new Vector2(jsMovement.Horizontal * moveSpeed, jsMovement.Vertical * moveSpeed);
+        
+       
     }
 
-    
+    public void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+    }
+
     void flipPlayer()
     {
         faceingLeft = !faceingLeft;
-        Vector3 scale = GameObject.Find("Body").transform.localScale;
+        Vector3 scale = GameObject.Find("BodyPlayer").transform.localScale;
         scale.x *= -1;
-        GameObject.Find("Body").transform.localScale = scale;
+        GameObject.Find("BodyPlayer").transform.localScale = scale;
     }
 }
