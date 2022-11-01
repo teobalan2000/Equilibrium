@@ -8,7 +8,7 @@ public class EnemyScript : MonoBehaviour
     private Rigidbody2D rb;
     public float moveSpeed = 3f;
     Vector2 movement;
-    bool facingRight = true;
+
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
@@ -16,8 +16,8 @@ public class EnemyScript : MonoBehaviour
 
 
     }
-    private float xir = 0f;
-    // Update is called once per frame
+
+
     void FixedUpdate()
     {
         

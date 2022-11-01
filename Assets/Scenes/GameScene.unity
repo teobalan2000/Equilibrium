@@ -1623,6 +1623,22 @@ PrefabInstance:
       propertyPath: jsMovement
       value: 
       objectReference: {fileID: 1258346474}
+    - target: {fileID: 5791853472415174828, guid: 74131423e5f9d6c46857381477e46230, type: 3}
+      propertyPath: m_Size.x
+      value: 0.642611
+      objectReference: {fileID: 0}
+    - target: {fileID: 5791853472415174828, guid: 74131423e5f9d6c46857381477e46230, type: 3}
+      propertyPath: m_Size.y
+      value: 0.6426111
+      objectReference: {fileID: 0}
+    - target: {fileID: 5791853472415174828, guid: 74131423e5f9d6c46857381477e46230, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0066200495
+      objectReference: {fileID: 0}
+    - target: {fileID: 5791853472415174828, guid: 74131423e5f9d6c46857381477e46230, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.24237165
+      objectReference: {fileID: 0}
     - target: {fileID: 5791853472415174829, guid: 74131423e5f9d6c46857381477e46230, type: 3}
       propertyPath: jsWeapon
       value: 
