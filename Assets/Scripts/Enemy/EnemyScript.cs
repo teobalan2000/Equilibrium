@@ -2,34 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyScript : MonoBehaviour
+public class EnemyScript : MonoBehaviour 
 {
-    // Start is called before the first frame update
-    public int MaxHealth = 100;
-    public int CurrentHealth;
-    public HealthBar healthBar;
-    //public NavMeshAgent enemy;
-    public Transform Player;
-    // Start is called before the first frame update
+    public GameObject target;
+    private Rigidbody2D rb;
+    public float moveSpeed = 3f;
+    Vector2 movement;
+    bool facingRight = true;
     void Start()
     {
-        //enemy.transform.position.y = 0f;
-        //enemy.updateRotation = false;
-        CurrentHealth = MaxHealth;
-        healthBar.SetMaxHealth(MaxHealth);
+        target = GameObject.FindGameObjectWithTag("Player");
+        rb = GetComponent<Rigidbody2D>();
+
 
     }
-
+    private float xir = 0f;
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        //enemy.SetDestination(Player.position);
+        
+        Vector3 direction = target.transform.position - transform.position;
+       
+        
+        direction.Normalize();
+        movement = direction;
+        rb.MovePosition((Vector2)transform.position + (movement * moveSpeed * Time.fixedDeltaTime));
     }
-    void TakeDamage(int damage)
-    {
 
-        CurrentHealth -= damage;
-        healthBar.SetHealth(CurrentHealth);
-        Debug.Log(CurrentHealth);
-    }
+   
 }
