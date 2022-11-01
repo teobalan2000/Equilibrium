@@ -9,7 +9,8 @@ public class PlayerShoot : MonoBehaviour
     public GameObject bulletPref;
 
     public float bulletForce = 20f;
-
+    public float fireRate = 0.5f;
+    public float nextFire = 0f;
     void Start()
     {
         
@@ -35,8 +36,12 @@ public class PlayerShoot : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bullet =  Instantiate(bulletPref, firePoint.position, firePoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(firePoint.right * bulletForce, ForceMode2D.Impulse);
+        if (Time.time > nextFire)
+        {
+            nextFire = Time.time + fireRate;
+            GameObject bullet = Instantiate(bulletPref, firePoint.position, firePoint.rotation);
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            rb.AddForce(firePoint.right * bulletForce, ForceMode2D.Impulse);
+        }
     }
 }
