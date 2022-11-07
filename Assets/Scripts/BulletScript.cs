@@ -17,7 +17,7 @@ public class BulletScript : MonoBehaviour
     {
             Destroy(gameObject,2f);
     }
-    public float knockBackForce = 100f;
+    public float knockBackForce = 5f;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Collider2D collider = collision.collider;
