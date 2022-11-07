@@ -103,6 +103,17 @@ CapsuleCollider2D:
   m_Offset: {x: 0.27738863, y: -0.13302296}
   m_Size: {x: 0.535071, y: 0.535071}
   m_Direction: 0
+--- !u!210 &4046738423103498490
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7154662020039974576}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!114 &-686854353964240185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   moveSpeed: 3
+  minDistance: 1
 --- !u!114 &317859222
 MonoBehaviour:
   m_ObjectHideFlags: 0

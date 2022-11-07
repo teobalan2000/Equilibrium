@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System.Collections;
 namespace VectorForestScenery
 {
     public class SceneryItem : MonoBehaviour
@@ -79,6 +79,11 @@ namespace VectorForestScenery
             {
                 renderer.color = color;
             }
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            Shake();
         }
     }
 }
