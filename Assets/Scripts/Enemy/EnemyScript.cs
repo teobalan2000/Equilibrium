@@ -12,33 +12,39 @@ public class EnemyScript : MonoBehaviour
     public float minDistance = -1;
     private Animator animator;
     bool faceingLeft = true;
+    private float time = 0f, Delay = 2f;
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
         //rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
-
+        animator.SetBool("popIn", true);
+        
+        
     }
 
     private void Update()
     {
-        if(transform.position.x > target.transform.position.x && faceingLeft == false)
+        time = time + 1f * Time.deltaTime;
+        if (time > Delay)
         {
-            flipPlayer();
-        }
-        else if(transform.position.x < target.transform.position.x && faceingLeft == true)
-        {
-            flipPlayer();
-        }
-        if (Vector2.Distance(transform.position, target.transform.position) > minDistance)
-        {
-            animator.SetBool("isMoving", true);
-            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
-        }
-        else
-        {
-            animator.SetBool("isMoving", false);
+            if (transform.position.x > target.transform.position.x && faceingLeft == false)
+            {
+                flipPlayer();
+            }
+            else if (transform.position.x < target.transform.position.x && faceingLeft == true)
+            {
+                flipPlayer();
+            }
+            if (Vector2.Distance(transform.position, target.transform.position) > minDistance)
+            {
+                animator.SetBool("isMoving", true);
+                transform.position = Vector2.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
+            }
+            else
+            {
+                animator.SetBool("isMoving", false);
+            }
         }
     }
 

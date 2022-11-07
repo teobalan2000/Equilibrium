@@ -1040,11 +1040,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7154662020039974577, guid: 6387eae8180eb82449432e392106374a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.250232
+      value: -8.01
       objectReference: {fileID: 0}
     - target: {fileID: 7154662020039974577, guid: 6387eae8180eb82449432e392106374a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.47347927
+      value: -1.41
       objectReference: {fileID: 0}
     - target: {fileID: 7154662020039974577, guid: 6387eae8180eb82449432e392106374a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3596,7 +3596,7 @@ MonoBehaviour:
   objects:
   - {fileID: 7154662020039974576, guid: 6387eae8180eb82449432e392106374a, type: 3}
   spawnTime: 3
-  SpawnOn_Off: 0
+  SpawnOn_Off: 1
 --- !u!1001 &1984193730
 PrefabInstance:
   m_ObjectHideFlags: 0
