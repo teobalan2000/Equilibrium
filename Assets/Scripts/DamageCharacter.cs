@@ -15,6 +15,7 @@ public class DamageCharacter : MonoBehaviour , DamageInterface
     {
         CurrentHealth = MaxHealth;
         rb = GetComponent<Rigidbody2D>();
+       
     }
 
     public void OnHit(int damage,Vector2 knockBack)
@@ -26,6 +27,7 @@ public class DamageCharacter : MonoBehaviour , DamageInterface
         {
             healthBar.SetHealth(CurrentHealth);
         }
+        
         
 
         if (CurrentHealth == 0)
