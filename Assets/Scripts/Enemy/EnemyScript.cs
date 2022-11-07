@@ -9,24 +9,47 @@ public class EnemyScript : MonoBehaviour
     public float moveSpeed = 3f;
     Vector2 movement;
     //public Transform enemy;
-    public float minDistance;
-
+    public float minDistance = -1;
+    private Animator animator;
+    bool faceingLeft = true;
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
         //rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
 
     }
 
     private void Update()
     {
-        if(Vector2.Distance(transform.position,target.transform.position) > minDistance)
+        if(transform.position.x > target.transform.position.x && faceingLeft == false)
         {
+            flipPlayer();
+        }
+        else if(transform.position.x < target.transform.position.x && faceingLeft == true)
+        {
+            flipPlayer();
+        }
+        if (Vector2.Distance(transform.position, target.transform.position) > minDistance)
+        {
+            animator.SetBool("isMoving", true);
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
         }
     }
 
+    void flipPlayer()
+    {
+        faceingLeft = !faceingLeft;
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
+        //GameObject.Find("BodyPlayer").transform.localScale = scale;
+    }
 
     //void FixedUpdate()
     //{
