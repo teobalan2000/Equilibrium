@@ -19,8 +19,6 @@ public class EnemyScript : MonoBehaviour
         //rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         animator.SetBool("popIn", true);
-        
-        
     }
 
     private void Update()
@@ -28,6 +26,7 @@ public class EnemyScript : MonoBehaviour
         time = time + 1f * Time.deltaTime;
         if (time > Delay)
         {
+            animator.SetBool("popIn", false);
             if (transform.position.x > target.transform.position.x && faceingLeft == false)
             {
                 flipPlayer();
