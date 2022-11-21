@@ -13,6 +13,9 @@ public class EnemyScript : MonoBehaviour
     private Animator animator;
     bool faceingLeft = true;
     private float time = 0f, Delay = 2f;
+
+    
+
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
@@ -46,6 +49,8 @@ public class EnemyScript : MonoBehaviour
             }
         }
     }
+
+   
 
     void flipPlayer()
     {
