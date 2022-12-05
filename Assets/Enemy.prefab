@@ -143,7 +143,6 @@ MonoBehaviour:
   target: {fileID: 0}
   moveSpeed: 3
   minDistance: 1
-  thrust: 1
 --- !u!114 &317859222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,42 +174,19 @@ MonoBehaviour:
   CurrentHealth: 0
   MaxHealth: 100
   healthBar: {fileID: 0}
---- !u!1 &7154662020213331212 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6923228288824888526, guid: 66d6b25677cc926438be05a46d880c14, type: 3}
-  m_PrefabInstance: {fileID: 242710877904345538}
-  m_PrefabAsset: {fileID: 0}
---- !u!68 &3568289325260349842
-EdgeCollider2D:
+--- !u!70 &8540631478720813791
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7154662020213331212}
+  m_GameObject: {fileID: 7154662020039974576}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.2936116, y: 0.056306265}
-  - {x: -0.29361144, y: 0.05630623}
-  - {x: -0.48382595, y: -0.012940995}
-  - {x: -0.64444464, y: 0.07415393}
-  - {x: -0.7413583, y: 0.033857364}
-  - {x: -0.91881007, y: 0.12704876}
-  - {x: -0.92853487, y: 0.29389438}
-  - {x: -1.0253983, y: 0.43840018}
-  - {x: -0.97737324, y: 0.7194057}
-  - {x: -1.0561821, y: 0.77543175}
-  - {x: -1.0809577, y: 0.9300049}
-  - {x: -0.87532914, y: 0.8659546}
-  - {x: -0.8285911, y: 0.5842778}
-  - {x: -0.28721333, y: 0.05642101}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
+  m_Offset: {x: 0.055232584, y: 0.60009384}
+  m_Size: {x: 0.9926144, y: 1.7523565}
+  m_Direction: 0

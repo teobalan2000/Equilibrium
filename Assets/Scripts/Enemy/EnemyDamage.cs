@@ -20,8 +20,26 @@ public class EnemyDamage : MonoBehaviour
         
     }
 
-    public float knockBackForce = 5000f; 
-    
+    public float knockBackForce = 5000f;
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        Debug.Log("Hit");
+
+        DamageInterface hit = collider.GetComponent<DamageInterface>();
+        if (collider.gameObject.tag == "Player")
+        {
+            animator.SetBool("attack", true);
+            Vector2 direction = (collider.transform.position - transform.position).normalized;
+
+            Vector2 knockBack = direction * knockBackForce;
+            //playerHealth.TakeDamage(damage);
+            hit.OnHit(damage, knockBack);
+
+        }
+
+    }
+    /*
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Collider2D collider = collision.collider;
@@ -38,5 +56,6 @@ public class EnemyDamage : MonoBehaviour
         }
         //animator.SetBool("attack", false);
     }
+    */
     
 }
