@@ -30,7 +30,7 @@ public class DamageCharacter : MonoBehaviour , DamageInterface
         
         
 
-        if (CurrentHealth == 0)
+        if (CurrentHealth <= 0)
         {
             Destroy(gameObject);
         }
