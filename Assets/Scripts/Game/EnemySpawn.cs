@@ -26,6 +26,6 @@ public class EnemySpawn : MonoBehaviour
         spawnPosition.x = Random.Range(-17, 17);
         spawnPosition.y = 0.5f;
 
-        Instantiate(objects[UnityEngine.Random.Range(0, objects.Length - 1)], spawnPosition, Quaternion.identity);
+        Instantiate(objects[Random.Range(0, objects.Length - 1)], spawnPosition, Quaternion.identity);
     }
 }
