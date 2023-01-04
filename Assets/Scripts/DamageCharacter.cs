@@ -10,7 +10,7 @@ public class DamageCharacter : MonoBehaviour , DamageInterface
     public int CurrentHealth;
     public int MaxHealth = 100;
     public HealthBar healthBar;
-
+    public GameObject playerDied;
     void Start()
     {
         CurrentHealth = MaxHealth;
@@ -34,6 +34,10 @@ public class DamageCharacter : MonoBehaviour , DamageInterface
         {
             Destroy(gameObject);
             ScoreManager.myScore++;
+            if(gameObject.tag == "Player")
+            {
+                playerDied.SetActive(true);
+            }
         }
     }
 
