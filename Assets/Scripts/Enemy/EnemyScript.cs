@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class EnemyScript : MonoBehaviour 
 {
     public GameObject target;
@@ -14,14 +15,13 @@ public class EnemyScript : MonoBehaviour
     bool faceingLeft = true;
     private float time = 0f, Delay = 2f;
 
-    
 
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
         //rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        animator.SetBool("popIn", true);
+        //animator.SetBool("popIn", true);
     }
 
     private void Update()
@@ -29,7 +29,7 @@ public class EnemyScript : MonoBehaviour
         time = time + 1f * Time.deltaTime;
         if (time > Delay)
         {
-            animator.SetBool("popIn", false);
+            //animator.SetBool("popIn", false);
             if (transform.position.x > target.transform.position.x && faceingLeft == false)
             {
                 flipPlayer();
