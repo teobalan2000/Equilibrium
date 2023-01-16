@@ -32,7 +32,7 @@ public class BulletScriptEnemy : MonoBehaviour
         DamageInterface hit = collider.GetComponent<DamageInterface>();
         if (collider.gameObject.tag == "Player")
         {
-            Debug.Log("Hit Player");
+            //Debug.Log("Hit Player");
             Destroy(gameObject);
 
             Vector2 direction = (collider.transform.position - transform.position).normalized;
