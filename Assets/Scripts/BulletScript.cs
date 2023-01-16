@@ -24,7 +24,7 @@ public class BulletScript : MonoBehaviour
         DamageInterface hit = collider.GetComponent<DamageInterface>();
         if (collider.gameObject.tag == "Enemy")
         {
-            Debug.Log("Hit Enemy");
+           // Debug.Log("Hit Enemy");
             Destroy(gameObject);
 
             Vector2 direction = (collider.transform.position - transform.position).normalized;
@@ -34,19 +34,4 @@ public class BulletScript : MonoBehaviour
             hit.OnHit(damageBullet, knockBack);
         }
     }
-   /* private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Collider2D collider = collision.collider;
-        DamageInterface hit = collider.GetComponent<DamageInterface>();
-        if (collision.gameObject.tag == "Enemy")
-        {
-            Destroy(gameObject);
-
-            Vector2 direction = (collider.transform.position - transform.position).normalized;
-
-            Vector2 knockBack = direction * knockBackForce;
-
-            hit.OnHit(damageBullet, knockBack);
-        }
-    }*/
 }

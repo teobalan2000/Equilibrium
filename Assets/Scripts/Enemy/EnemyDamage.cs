@@ -8,6 +8,8 @@ public class EnemyDamage : MonoBehaviour
     public int damage = 5;
     public Animator animator;
 
+    private float timeBtwAttack;
+    public float startTimeBtwAttack;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,12 +46,21 @@ public class EnemyDamage : MonoBehaviour
         DamageInterface hit = collider.GetComponent<DamageInterface>();
         if (collider.gameObject.tag == "Player")
         {
-            animator.SetBool("attack", true);
+            if (timeBtwAttack <= 0)
+            {
+                animator.SetBool("attack", true);
             Vector2 direction = (collider.transform.position - transform.position).normalized;
 
             Vector2 knockBack = direction * knockBackForce;
             //playerHealth.TakeDamage(damage);
-            hit.OnHit(damage, knockBack);
+            
+                hit.OnHit(damage, knockBack);
+                timeBtwAttack = startTimeBtwAttack;
+            }
+            else
+            {
+                timeBtwAttack -= Time.deltaTime;
+            }
 
         }
     }

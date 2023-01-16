@@ -15,7 +15,7 @@ public class EnemyScript : MonoBehaviour
     bool faceingLeft = true;
     private float time = 0f, Delay = 2f;
 
-
+    //public float enemyExperiencePoint = 10f;
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");

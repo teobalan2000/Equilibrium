@@ -12,6 +12,7 @@ public class DamageCharacter : MonoBehaviour , DamageInterface
     public HealthBar healthBar;
     public GameObject playerDied;
     public LvlScript lvlScript;
+    public float EnemyExperiencePoint = 10f;
     void Start()
     {
         CurrentHealth = MaxHealth;
@@ -35,6 +36,7 @@ public class DamageCharacter : MonoBehaviour , DamageInterface
         {
             Destroy(gameObject);
             ScoreManager.myScore++;
+            lvlScript.GetExperience(EnemyExperiencePoint);
             //lvlScript.GetExperience(30);
             if(gameObject.tag == "Player")
             {

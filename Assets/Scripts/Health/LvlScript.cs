@@ -16,13 +16,7 @@ public class LvlScript : MonoBehaviour
     {
         
     }
-    private void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.H))
-        {
-            GetExperience(20);
-        }
-    }
+    
     private float givenXp;
     // Update is called once per frame
 
@@ -31,6 +25,7 @@ public class LvlScript : MonoBehaviour
         //float xpFraction = currentXp / requiredXp;
         //float FXP = LvlBarImage.fillAmount;
 
+        Debug.Log(experienceGained);
 
         if (currentXp >= requiredXp)
         {
