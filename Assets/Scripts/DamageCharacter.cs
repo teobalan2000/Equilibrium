@@ -11,6 +11,7 @@ public class DamageCharacter : MonoBehaviour , DamageInterface
     public int MaxHealth = 100;
     public HealthBar healthBar;
     public GameObject playerDied;
+    public LvlScript lvlScript;
     void Start()
     {
         CurrentHealth = MaxHealth;
@@ -34,6 +35,7 @@ public class DamageCharacter : MonoBehaviour , DamageInterface
         {
             Destroy(gameObject);
             ScoreManager.myScore++;
+            //lvlScript.GetExperience(30);
             if(gameObject.tag == "Player")
             {
                 playerDied.SetActive(true);

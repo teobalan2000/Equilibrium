@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerScript : MonoBehaviour
 {
     public float moveSpeed = 5f;
@@ -12,11 +12,15 @@ public class PlayerScript : MonoBehaviour
     float horizontalMove = 0f;
     bool faceingLeft = true;
 
+   
+
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GameObject.Find("BodyPlayer").GetComponent<Animator>();
         
+
        
     }
     Vector2 movement;
@@ -51,15 +55,15 @@ public class PlayerScript : MonoBehaviour
                 flipPlayer();
             }
         }
+
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+
+
+
         
-        
-       
     }
 
-    public void FixedUpdate()
-    {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-    }
+   
 
     void flipPlayer()
     {
