@@ -8,12 +8,14 @@ public class PlayerShoot : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPref;
 
+    public Animator animator;
+
     public float bulletForce = 20f;
     public float fireRate = 0.5f;
     public float nextFire = 0f;
     void Start()
     {
-        
+        //animator = GameObject.Find("Character (96)").GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -24,7 +26,10 @@ public class PlayerShoot : MonoBehaviour
         {
            // yield return new WaitForSeconds(2f);
             Shoot();
+           // animator.SetBool("isMoving", true);
+
         }
+       // animator.SetBool("isMoving", false);
         /*
         if(Input.GetButtonDown("Fire1"))
         {
@@ -38,6 +43,7 @@ public class PlayerShoot : MonoBehaviour
     {
         if (Time.time > nextFire)
         {
+            
             nextFire = Time.time + fireRate;
             GameObject bullet = Instantiate(bulletPref, firePoint.position, firePoint.rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
