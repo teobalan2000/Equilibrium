@@ -18,7 +18,7 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GameObject.Find("BodyPlayer").GetComponent<Animator>();
+        animator = GameObject.Find("Character (96)").GetComponent<Animator>();
         
 
        
@@ -30,7 +30,15 @@ public class PlayerScript : MonoBehaviour
         movement.x = jsMovement.Horizontal;
         movement.y = jsMovement.Vertical;
 
-        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+        if (jsMovement.Horizontal != 0f || jsMovement.Vertical != 0f)
+        {
+            animator.SetBool("isMoving", true);
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
+        }
+        
 
         
         if (jsWeapon.Horizontal == 0)
@@ -68,8 +76,8 @@ public class PlayerScript : MonoBehaviour
     void flipPlayer()
     {
         faceingLeft = !faceingLeft;
-        Vector3 scale = GameObject.Find("BodyPlayer").transform.localScale;
+        Vector3 scale = GameObject.Find("Character (96)").transform.localScale;
         scale.x *= -1;
-        GameObject.Find("BodyPlayer").transform.localScale = scale;
+        GameObject.Find("Character (96)").transform.localScale = scale;
     }
 }

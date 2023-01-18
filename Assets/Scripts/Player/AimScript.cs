@@ -8,7 +8,7 @@ public class AimScript : MonoBehaviour
     public Transform aimTransform;
     private void Awake()
     {
-        aimTransform = transform.Find("Aim");
+        //aimTransform = transform.Find("Aim");
     }
 
     private void Update()
