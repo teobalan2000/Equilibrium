@@ -54,6 +54,7 @@ public class Database : MonoBehaviour
     {
         StartCoroutine(GetHighScore((int highScore) => {
             HighScore.text = "Highscore: " + highScore.ToString();
+            StateController.HighScore = highScore;
         }));
     }
 }
