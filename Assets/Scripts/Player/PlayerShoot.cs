@@ -22,7 +22,7 @@ public class PlayerShoot : MonoBehaviour
     void Update()
     {
         
-        if(js.Horizontal != 0)
+        if(js.Horizontal != 0 || js.Vertical != 0)
         {
            // yield return new WaitForSeconds(2f);
             Shoot();

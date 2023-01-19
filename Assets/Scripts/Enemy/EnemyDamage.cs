@@ -28,17 +28,17 @@ public class EnemyDamage : MonoBehaviour
     {
         //Debug.Log("Hit");
 
-        DamageInterface hit = collider.GetComponent<DamageInterface>();
-        if (collider.gameObject.tag == "Player")
-        {
-            animator.SetBool("attack", true);
-            Vector2 direction = (collider.transform.position - transform.position).normalized;
+        //DamageInterface hit = collider.GetComponent<DamageInterface>();
+        //if (collider.gameObject.tag == "Player")
+        //{
+        //    animator.SetBool("attack", true);
+        //    Vector2 direction = (collider.transform.position - transform.position).normalized;
 
-            Vector2 knockBack = direction * knockBackForce;
-            //playerHealth.TakeDamage(damage);
-            hit.OnHit(damage, knockBack);
+        //    Vector2 knockBack = direction * knockBackForce;
+        //    //playerHealth.TakeDamage(damage);
+        //    hit.OnHit(damage, knockBack);
 
-        }
+        //}
 
     }
     private void OnTriggerStay2D(Collider2D collider)

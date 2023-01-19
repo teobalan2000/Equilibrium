@@ -19,9 +19,11 @@ public class PlayerScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GameObject.Find("Character (96)").GetComponent<Animator>();
-        
+        Application.targetFrameRate = 60;
 
-       
+
+
+
     }
     Vector2 movement;
     void Update()

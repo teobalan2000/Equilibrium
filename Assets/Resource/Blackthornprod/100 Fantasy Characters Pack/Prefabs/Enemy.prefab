@@ -172,9 +172,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
-  damage: 5
+  damage: 4
   animator: {fileID: 0}
-  startTimeBtwAttack: 1
+  startTimeBtwAttack: 2
   knockBackForce: 100
 --- !u!114 &317859230
 MonoBehaviour:
@@ -193,3 +193,4 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   playerDied: {fileID: 0}
   lvlScript: {fileID: 0}
+  EnemyExperiencePoint: 10
