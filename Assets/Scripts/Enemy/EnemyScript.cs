@@ -27,7 +27,7 @@ public class EnemyScript : MonoBehaviour
     private void Update()
     {
         time = time + 1f * Time.deltaTime;
-        if (time > Delay)
+        if (time > Delay && target != null)
         {
             //animator.SetBool("popIn", false);
             if (transform.position.x > target.transform.position.x && faceingLeft == false)

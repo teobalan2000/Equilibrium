@@ -20967,6 +20967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Score: {fileID: 1478359445}
+  HighScore: 0
 --- !u!1 &1492326721
 GameObject:
   m_ObjectHideFlags: 0
@@ -30679,7 +30680,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2128094223}
-  - component: {fileID: 2128094222}
   m_Layer: 0
   m_Name: WaveSpawner
   m_TagString: Untagged
@@ -30687,24 +30687,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2128094222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2128094221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79a3e61f80ea7468ab6c3e4a6dcc3046, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemies: []
-  currWave: 1
-  waveValue: 0
-  enemiesToSpawn: []
-  spawnLocation: {fileID: 1897244957}
-  waveDuration: 20
 --- !u!4 &2128094223
 Transform:
   m_ObjectHideFlags: 0
