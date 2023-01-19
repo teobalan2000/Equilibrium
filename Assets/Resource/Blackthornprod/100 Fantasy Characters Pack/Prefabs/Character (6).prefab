@@ -499,7 +499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 3
+  moveSpeed: 2
   minDistance: 5
 --- !u!114 &-8492956640111619098
 MonoBehaviour:
@@ -518,6 +518,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   playerDied: {fileID: 0}
   lvlScript: {fileID: 0}
+  EnemyExperiencePoint: 10
 --- !u!210 &1371094189535630670
 SortingGroup:
   m_ObjectHideFlags: 0

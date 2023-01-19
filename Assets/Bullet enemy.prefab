@@ -52,7 +52,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -86,7 +86,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 25
   damageBullet: 10
-  speed: 5
+  speed: 4
   knockBackForce: 5
 --- !u!1 &8089432675672797531
 GameObject:
@@ -162,7 +162,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7005eabd185f3f140bedcaeb2471cf9e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5283019, g: 0.17194732, b: 0.17194732, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
