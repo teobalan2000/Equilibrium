@@ -12,7 +12,9 @@ public class DamageCharacter : MonoBehaviour , DamageInterface
     public HealthBar healthBar;
     public GameObject playerDied;
     public LvlScript lvlScript;
-    public float EnemyExperiencePoint = 10f;
+    //public float EnemyExperiencePoint = 10f;
+
+    
     void Start()
     {
         CurrentHealth = MaxHealth;
@@ -20,9 +22,9 @@ public class DamageCharacter : MonoBehaviour , DamageInterface
        
     }
 
-    public void OnHit(int damage,Vector2 knockBack)
+    public void OnHit(int damage)
     {
-        rb.AddForce(knockBack, ForceMode2D.Impulse);
+        //rb.AddForce(knockBack, ForceMode2D.Impulse);
 
         CurrentHealth -= damage;
         if (gameObject.tag == "Player")
@@ -34,13 +36,20 @@ public class DamageCharacter : MonoBehaviour , DamageInterface
 
         if (CurrentHealth <= 0)
         {
-            Destroy(gameObject);
-            ScoreManager.myScore++;
-            lvlScript.GetExperience(EnemyExperiencePoint);
-            //lvlScript.GetExperience(30);
-            if(gameObject.tag == "Player")
+            if (gameObject != null)
             {
-                playerDied.SetActive(true);
+                if (gameObject != null)
+                {
+                    Destroy(gameObject);
+
+                    ScoreManager.myScore++;
+                    //lvlScript.GetExperience(EnemyExperiencePoint);
+                    //lvlScript.GetExperience(30);
+                    if (gameObject.tag == "Player")
+                    {
+                        playerDied.SetActive(true);
+                    }
+                }
             }
         }
     }

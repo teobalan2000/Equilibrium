@@ -22,7 +22,7 @@ public class EnemyDamage : MonoBehaviour
         
     }
 
-    public float knockBackForce = 50f;
+    
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -51,10 +51,10 @@ public class EnemyDamage : MonoBehaviour
                 animator.SetBool("attack", true);
             Vector2 direction = (collider.transform.position - transform.position).normalized;
 
-            Vector2 knockBack = direction * knockBackForce;
+      
             //playerHealth.TakeDamage(damage);
             
-                hit.OnHit(damage, knockBack);
+                hit.OnHit(damage);
                 timeBtwAttack = startTimeBtwAttack;
             }
             else

@@ -30,5 +30,7 @@
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:198128309525:ios:91267125eaa79f2cdc451c</string>
+	<key>DATABASE_URL</key>
+	<string>https://equilibrium-178d7-default-rtdb.europe-west1.firebasedatabase.app</string>
 </dict>
 </plist>

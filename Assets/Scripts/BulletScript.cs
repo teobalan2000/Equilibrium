@@ -17,7 +17,7 @@ public class BulletScript : MonoBehaviour
     {
             Destroy(gameObject,2f);
     }
-    public float knockBackForce = 5f;
+    
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -29,9 +29,7 @@ public class BulletScript : MonoBehaviour
 
             Vector2 direction = (collider.transform.position - transform.position).normalized;
 
-            Vector2 knockBack = direction * knockBackForce;
-
-            hit.OnHit(damageBullet, knockBack);
+            hit.OnHit(damageBullet);
         }
     }
 }
