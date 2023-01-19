@@ -193,3 +193,4 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   playerDied: {fileID: 0}
   lvlScript: {fileID: 0}
+  EnemyExperiencePoint: 10
