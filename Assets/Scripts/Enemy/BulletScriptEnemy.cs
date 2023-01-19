@@ -9,37 +9,45 @@ public class BulletScriptEnemy : MonoBehaviour
     public int damageBullet = 10;
 
     public float speed;
+    [SerializeField]
     private Transform player;
     private Vector2 target;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        target = new Vector2(player.position.x, player.position.y);
+        
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+            target = new Vector2(player.position.x, player.position.y);
+        
     }
 
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-        
-        Destroy(gameObject, 3f);
+        if (gameObject != null && player != null)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+
+
+            Destroy(gameObject, 3f);
+        }
     }
-    public float knockBackForce = 5f;
+
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
         
         DamageInterface hit = collider.GetComponent<DamageInterface>();
-        if (collider.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "Player" && collider.gameObject != null)
         {
             //Debug.Log("Hit Player");
+            
             Destroy(gameObject);
 
             Vector2 direction = (collider.transform.position - transform.position).normalized;
 
-            Vector2 knockBack = direction * knockBackForce;
 
-            hit.OnHit(damageBullet, knockBack);
+
+            hit.OnHit(damageBullet);
         }
     }
    /* private void OnCollisionEnter2D(Collision2D collision)
