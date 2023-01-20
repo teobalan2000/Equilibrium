@@ -4,10 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
+    public GameObject upgrades;
+    public GameObject startPanel;
+    public GameObject player;
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        startPanel.SetActive(true);
+        player.SetActive(true);
+        upgrades.SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,6 +29,15 @@ public class MainMenu : MonoBehaviour
 
     public void Upgrade()
     {
-        PlayerHealth.MaxHealth += 50;
+        startPanel.SetActive(false);
+        upgrades.SetActive(true);
+        player.SetActive(false);
+    }
+
+    public void ExitUpgrades()
+    {
+        upgrades.SetActive(false);
+        startPanel.SetActive(true);
+        player.SetActive(true);
     }
 }
