@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3539674209261769258, guid: 66d6b25677cc926438be05a46d880c14, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 1afa6e3e9b1554550a5dfa13ec18bc63, type: 2}
     - target: {fileID: 6923228288824888526, guid: 66d6b25677cc926438be05a46d880c14, type: 3}
       propertyPath: m_TagString
       value: Weapon
@@ -172,10 +176,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
-  damage: 4
+  damage: 5
   animator: {fileID: 0}
   startTimeBtwAttack: 2
-  knockBackForce: 100
 --- !u!114 &317859230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,4 +196,4 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   playerDied: {fileID: 0}
   lvlScript: {fileID: 0}
-  EnemyExperiencePoint: 10
+  EnemyHealth: 100

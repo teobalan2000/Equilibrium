@@ -15,7 +15,7 @@ public class BulletScriptEnemy : MonoBehaviour
 
     void Start()
     {
-        
+            
             player = GameObject.FindGameObjectWithTag("Player").transform;
             target = new Vector2(player.position.x, player.position.y);
         

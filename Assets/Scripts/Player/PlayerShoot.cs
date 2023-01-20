@@ -15,6 +15,7 @@ public class PlayerShoot : MonoBehaviour
     public float nextFire = 0f;
     void Start()
     {
+        fireRate = StateController.FireRate;
         //animator = GameObject.Find("Character (96)").GetComponent<Animator>();
     }
 
