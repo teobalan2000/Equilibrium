@@ -564,7 +564,6 @@ MonoBehaviour:
   damage: 2
   animator: {fileID: 0}
   startTimeBtwAttack: 2
-  knockBackForce: 100
 --- !u!114 &166244934517457027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -597,7 +596,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   playerDied: {fileID: 0}
   lvlScript: {fileID: 0}
-  EnemyExperiencePoint: 10
+  EnemyHealth: 40
 --- !u!210 &5212091224552523051
 SortingGroup:
   m_ObjectHideFlags: 0

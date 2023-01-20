@@ -6,16 +6,17 @@ public class BulletScript : MonoBehaviour
 {
 
     public float range = 25f;
-    public int damageBullet = 10;
+    public int damageBullet;
 
     void Start()
     {
-
+        damageBullet = StateController.WeaponDamage;
     }
 
     void Update()
     {
-            Destroy(gameObject,2f);
+        //Debug.Log(damageBullet);
+        Destroy(gameObject,2f);
     }
     
 

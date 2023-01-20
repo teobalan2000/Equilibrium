@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class backToMenu : MonoBehaviour
 {
-    //Database db;
-    //ScoreManager sm;
+    
     // Start is called before the first frame update
     //private string userId;
     //private DatabaseReference dbReference;

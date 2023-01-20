@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-
+/*
     public int CurrentHealth;
-    public static int MaxHealth = 100;
+    private int MaxHealth;
     public HealthBar healthBar;
     // Start is called before the first frame update
     void Start()
     {
+        MaxHealth = StateController.Health;
         CurrentHealth = MaxHealth;
+        Debug.Log("da" + MaxHealth);
         healthBar.SetMaxHealth(MaxHealth);
     }
 
@@ -26,4 +28,5 @@ public class PlayerHealth : MonoBehaviour
         healthBar.SetHealth(CurrentHealth);
         Debug.Log(CurrentHealth);
     }
+*/
 }
